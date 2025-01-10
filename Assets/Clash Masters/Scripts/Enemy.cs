@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     private State state;
 
     [Header(" Events ")]
-    public static UnityAction<Vector3> OnEnemyDied; 
+    public static UnityAction<Vector3, Color> OnEnemyDied; 
 
     [Header(" Detection ")]
     [SerializeField] private LayerMask runnersLayer;
@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
 
     private void Explode()
     {
-        OnEnemyDied?.Invoke(transform.position/*, renderer.material.GetColor("_BaseColor")*/);
+        OnEnemyDied?.Invoke(transform.position, renderer.material.GetColor("_BaseColor"));
 
         Destroy(gameObject);
     }

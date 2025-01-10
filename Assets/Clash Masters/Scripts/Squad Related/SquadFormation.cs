@@ -77,16 +77,13 @@ public class SquadFormation : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             Vector3 spawnPosition = GetFermatPosition(transform.childCount);
-            if(runnerPrefab != null)
-            {
-                Runner runnerInstance = Instantiate(runnerPrefab, spawnPosition, Quaternion.identity, transform);
 
-                runnerInstance.SetSkin(transform.GetChild(0).GetComponent<Runner>().GetSkinIndex());
-                runnerInstance.StartRunning();
-                
-                runnerInstance.name = "Runner_" + runnerInstance.transform.GetSiblingIndex();
+            Runner runnerInstance = Instantiate(runnerPrefab, spawnPosition, Quaternion.identity, transform);
 
-            }
+            runnerInstance.SetSkin(transform.GetChild(0).GetComponent<Runner>().GetSkinIndex());
+            runnerInstance.StartRunning();
+            
+            runnerInstance.name = "Runner_" + runnerInstance.transform.GetSiblingIndex();
         }
     }
 

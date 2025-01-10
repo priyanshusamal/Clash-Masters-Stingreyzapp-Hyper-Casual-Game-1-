@@ -31,10 +31,6 @@ public class Runner : MonoBehaviour
     private Vector3 targetPyramidLocalPosition;
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        collider.enabled = true;
-    }
     void Start()
     {
         runnerState = RunnerState.Running;
@@ -148,10 +144,10 @@ public class Runner : MonoBehaviour
         return skinManager.GetSkinIndex();
     }
 
-    // public Color GetColor()
-    // {
-    //     return skinManager.GetColor();// renderer.material.GetColor("_BaseColor");
-    // }
+    public Color GetColor()
+    {
+        return skinManager.GetColor();// renderer.material.GetColor("_BaseColor");
+    }
 
     public bool IsStopped()
     {
