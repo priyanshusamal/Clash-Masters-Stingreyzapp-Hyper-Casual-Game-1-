@@ -34,24 +34,24 @@ public class EffectsManager : MonoBehaviour
 
     private void PlaySplashParticle(Runner runner)
     {
-        Color color = runner.GetColor();
+        // Color color = runner.GetColor();
         Vector3 position = runner.transform.position;
 
-        PlaySplashParticle(position, color);
+        PlaySplashParticle(position/*, color*/);
     }
 
-    public void PlaySplashParticle(Vector3 position, Color color)
+    public void PlaySplashParticle(Vector3 position/*, Color color*/)
     {
         runnerSplashParticles.transform.position = position + Vector3.up * .01f;
-        runnerSplashParticles.startColor = color;
+        // runnerSplashParticles.startColor = color;
 
         runnerSplashParticles.Play();
     }
 
-    public void PlayEnemySplashParticle(Vector3 position, Color color)
+    public void PlayEnemySplashParticle(Vector3 position/*, Color color*/)
     {
         enemySplashParticles.transform.position = position + Vector3.up * .01f;
-        enemySplashParticles.startColor = color;
+        // enemySplashParticles.startColor = color;
 
         enemySplashParticles.Play();
     }

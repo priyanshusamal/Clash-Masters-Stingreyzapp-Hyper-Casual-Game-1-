@@ -7,8 +7,8 @@ public class RunnerSkinManager : MonoBehaviour
 {
     [Header(" Elements ")]
     [SerializeField] private Transform skinsParent;
-    [SerializeField] private Renderer[] skinsRenderers;
-    private int currentSkinIndex;
+    [SerializeField] private Renderer[] spriteRenderer;
+    private int currentSpriteIndex;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class RunnerSkinManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetSkin(currentSkinIndex);
+        SetSkin(currentSpriteIndex);
     }
 
     // Update is called once per frame
@@ -37,17 +37,17 @@ public class RunnerSkinManager : MonoBehaviour
 
     public void StartRunning()
     {
-        skinsParent.GetChild(currentSkinIndex).GetComponent<Animator>().SetInteger("State", 1);
+        skinsParent.GetChild(currentSpriteIndex).GetComponent<Animator>().SetInteger("State", 1);
     }
 
     public void StopRunning()
     {
-        skinsParent.GetChild(currentSkinIndex).GetComponent<Animator>().SetInteger("State", 0);
+        skinsParent.GetChild(currentSpriteIndex).GetComponent<Animator>().SetInteger("State", 0);
     }
 
     public void SetSkin(int skinIndex)
     {
-        currentSkinIndex = skinIndex;
+        currentSpriteIndex = skinIndex;
 
         for (int i = 0; i < skinsParent.childCount; i++)
             skinsParent.GetChild(i).gameObject.SetActive(i == skinIndex);
@@ -57,27 +57,27 @@ public class RunnerSkinManager : MonoBehaviour
 
     public void DisableRenderer()
     {
-        foreach (Renderer renderer in skinsRenderers)
+        foreach (Renderer renderer in spriteRenderer)
             renderer.enabled = false;        
     }
 
-    public Color GetColor()
-    {
-        return skinsRenderers[0].material.GetColor("_BaseColor");
-    }
+    // public Color GetColor()
+    // {
+    //     return spriteRenderer[0].material.GetColor("_BaseColor");
+    // }
 
     public int GetSkinIndex()
     {
-        return currentSkinIndex;
+        return currentSpriteIndex;
     }
 
     private void SaveData()
     {
-        PlayerPrefs.SetInt("LastSkin", currentSkinIndex);
+        PlayerPrefs.SetInt("LastSkin", currentSpriteIndex);
     }
 
     private void LoadData()
     {
-        currentSkinIndex = PlayerPrefs.GetInt("LastSkin");
+        currentSpriteIndex = PlayerPrefs.GetInt("LastSkin");
     }
 }
