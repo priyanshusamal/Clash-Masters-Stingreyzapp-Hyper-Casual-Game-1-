@@ -80,7 +80,10 @@ public class SquadDetection : MonoBehaviour
     private void DetectionObstacles()
     {
         if (Physics.OverlapSphere(transform.position, 0.5f, obstacleLayer).Length > 0)
-            runner.Explode();           
+        {
+            if(runner != null)
+            {runner.Explode(); }          
+        }
     } 
 
     private void DetectEnemies()

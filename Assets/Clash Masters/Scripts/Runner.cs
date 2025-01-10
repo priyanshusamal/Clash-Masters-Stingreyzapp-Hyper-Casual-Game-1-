@@ -1,8 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using JetSystems;
 using UnityEngine.Events;
+
 
 public class Runner : MonoBehaviour
 {
@@ -33,7 +34,11 @@ public class Runner : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
+
+        // obstaclesLayer = "Obstacles";
         collider.enabled = true;
+        skinManager.EnableRenderer();
     }
     void Start()
     {
@@ -75,7 +80,7 @@ public class Runner : MonoBehaviour
 
     private void DetectObstacles()
     {
-        if (Physics.OverlapSphere(transform.position, 0.1f, obstaclesLayer).Length > 0)
+        if (Physics.OverlapSphere(transform.position, 0.5f, obstaclesLayer).Length > 0)
             Explode();
     }
 
@@ -118,7 +123,7 @@ public class Runner : MonoBehaviour
 
         OnRunnerDied?.Invoke(this);
 
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 2f);
     }
 
     public void Stop()

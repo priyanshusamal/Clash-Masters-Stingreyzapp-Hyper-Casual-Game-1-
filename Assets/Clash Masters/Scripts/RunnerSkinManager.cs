@@ -9,6 +9,7 @@ public class RunnerSkinManager : MonoBehaviour
     [SerializeField] private Transform skinsParent;
     [SerializeField] private Renderer[] spriteRenderer;
     private int currentSpriteIndex;
+    private bool Minimize = false;
 
     private void Awake()
     {
@@ -31,13 +32,17 @@ public class RunnerSkinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Minimize==true)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale,new Vector3(0.5f,0.5f,0.5f),0.01f);
+        }
     }
 
 
     public void StartRunning()
     {
         skinsParent.GetChild(currentSpriteIndex).GetComponent<Animator>().SetInteger("State", 1);
+        Minimize = true;
     }
 
     public void StopRunning()
@@ -59,6 +64,11 @@ public class RunnerSkinManager : MonoBehaviour
     {
         foreach (Renderer renderer in spriteRenderer)
             renderer.enabled = false;        
+    }
+    public void EnableRenderer()
+    {
+        foreach (Renderer renderer in spriteRenderer)
+            renderer.enabled = true;        
     }
 
     // public Color GetColor()
