@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f97ed7bf087420c813add6aa5d6c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 5804927490915152909, guid: 0a09d2d1d8f9c4fcb8368298dc5a2f5b,
+  objectToSpawn: {fileID: 7990820477145832734, guid: e4ef39e3697e499438c8d3addbdb2cac,
     type: 3}
   amount: 12
   parent: {fileID: 603837014272494935}

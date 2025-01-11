@@ -35,6 +35,7 @@ namespace JetSystems
         [Header(" Rendering ")]
         public Transform rotatingItemParent;
         public Image currentSprite;
+        public Image[] currentArmySprites;
         private int currentSpriteIndex = 0;
 
         [Header(" Design ")]
@@ -183,6 +184,10 @@ namespace JetSystems
             Debug.Log(itemIndex);
             currentSpriteIndex = itemIndex;
             currentSprite.sprite = itemsSprites[currentSpriteIndex];
+            for(int i=0; i <= currentArmySprites.Length-1; i++)
+            {
+                currentArmySprites[i].sprite = itemsSprites[currentSpriteIndex];
+            }
             SaveData();
             ShowItem(itemIndex);
         }

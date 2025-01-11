@@ -83,6 +83,7 @@ public class SquadUpgrader : MonoBehaviour
     private void LoadData()
     {
         squadLevel = PlayerPrefs.GetInt("SquadLevel");
+        // squadLevel = 0;
     }
 
     private void SaveData()

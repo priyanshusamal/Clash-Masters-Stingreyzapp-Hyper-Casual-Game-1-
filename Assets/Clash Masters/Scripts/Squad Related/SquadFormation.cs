@@ -37,10 +37,18 @@ public class SquadFormation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         FermatSpiralPlacement();
         squadAmountText.text = transform.childCount.ToString();
+        if(runnerPrefab == null)
+        {
+            if(transform.childCount > 0)
+            {
+                runnerPrefab = transform.GetChild(0).transform.GetComponent<Runner>();
+                Debug.Log("hel");
+            }
+        }
     }
 
     private void FermatSpiralPlacement()

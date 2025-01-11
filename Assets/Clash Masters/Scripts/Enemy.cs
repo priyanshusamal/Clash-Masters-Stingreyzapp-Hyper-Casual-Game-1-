@@ -23,16 +23,21 @@ public class Enemy : MonoBehaviour
     [Header(" Animation ")]
     [SerializeField] private Animator animator;
     [SerializeField] private Renderer renderer;
+    [SerializeField] private Renderer shadowRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        shadowRenderer.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(state == State.Idle)
+        {
+
+        }
         ManageEnemyState();
 
         if (targetRunner == null)
@@ -84,11 +89,13 @@ public class Enemy : MonoBehaviour
 
     private void GoTowardsTarget()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, targetRunner.transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetRunner.transform.position, moveSpeed * Time.deltaTime);
         
-        GetComponent<Rigidbody>().velocity = (targetRunner.transform.position - transform.position).normalized * moveSpeed;
+        // GetComponent<Rigidbody>().velocity = (targetRunner.transform.position - transform.position).normalized * moveSpeed;
 
-        transform.forward = (targetRunner.transform.position - transform.position).normalized;
+        // transform.forward = (targetRunner.transform.position - transform.position).normalized;
+
+
 
         if(Vector3.Distance(transform.position, targetRunner.transform.position) < 1f)
             SetAttackingState();        
@@ -125,6 +132,7 @@ public class Enemy : MonoBehaviour
 
     private void Explode()
     {
+        shadowRenderer.enabled = false;
         OnEnemyDied?.Invoke(transform.position/*, renderer.material.GetColor("_BaseColor")*/);
 
         Destroy(gameObject);

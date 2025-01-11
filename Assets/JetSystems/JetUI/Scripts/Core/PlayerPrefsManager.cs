@@ -15,7 +15,10 @@ namespace JetSystems
 
 
         public static int GetCoins()
-        { return PlayerPrefs.GetInt(COINSKEY); }
+        { 
+            // return 1000;
+            return PlayerPrefs.GetInt(COINSKEY); 
+        }
 
         public static void SaveCoins(int coinsAmount)
         { PlayerPrefs.SetInt(COINSKEY, coinsAmount); }
