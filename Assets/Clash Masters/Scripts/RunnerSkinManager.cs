@@ -8,6 +8,7 @@ public class RunnerSkinManager : MonoBehaviour
     [Header(" Elements ")]
     [SerializeField] private Transform skinsParent;
     [SerializeField] private Renderer[] spriteRenderer;
+    [SerializeField] private Renderer[] shadowRenderer;
     private int currentSpriteIndex;
     private bool Minimize = false;
 
@@ -63,12 +64,24 @@ public class RunnerSkinManager : MonoBehaviour
     public void DisableRenderer()
     {
         foreach (Renderer renderer in spriteRenderer)
+        {
             renderer.enabled = false;        
+        }
+        foreach (Renderer renderer in shadowRenderer)
+        {    
+            renderer.enabled = false;        
+        }
     }
     public void EnableRenderer()
     {
         foreach (Renderer renderer in spriteRenderer)
+        {
+            renderer.enabled = true;   
+        }
+        foreach (Renderer renderer in shadowRenderer)
+        {    
             renderer.enabled = true;        
+        }     
     }
 
     // public Color GetColor()

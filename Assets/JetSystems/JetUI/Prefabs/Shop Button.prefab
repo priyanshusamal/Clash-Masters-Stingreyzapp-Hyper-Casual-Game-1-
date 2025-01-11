@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a880f221b304d4fdcb6e6c4fd185994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSkinImage: {fileID: 0}
   containerImage: {fileID: 4782243446611037074}
   itemImage: {fileID: 4782243446995748626}
   contour: {fileID: 4782243445824112141}

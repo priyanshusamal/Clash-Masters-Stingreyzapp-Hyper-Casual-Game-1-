@@ -33,7 +33,7 @@ public class SquadDetection : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (UIManager.IsGame())
         {

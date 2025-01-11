@@ -9,6 +9,7 @@ namespace JetSystems
     public class ShopButton : MonoBehaviour
     {
         [Header(" Settings ")]
+
         public Image containerImage;
         public Image itemImage;
         public Image contour;
@@ -52,6 +53,7 @@ namespace JetSystems
         public void SetSelected(bool state)
         {
             contour.gameObject.SetActive(state);
+            
 
             /*
             if (state)
@@ -64,6 +66,7 @@ namespace JetSystems
         public void SetContainerSprite(Sprite containerSprite)
         {
             containerImage.sprite = containerSprite;
+            
         }
     }
 }

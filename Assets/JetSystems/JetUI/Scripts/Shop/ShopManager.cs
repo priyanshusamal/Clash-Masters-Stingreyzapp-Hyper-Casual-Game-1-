@@ -34,6 +34,8 @@ namespace JetSystems
 
         [Header(" Rendering ")]
         public Transform rotatingItemParent;
+        public Image currentSprite;
+        private int currentSpriteIndex = 0;
 
         [Header(" Design ")]
         public Sprite lockedSprite;
@@ -48,8 +50,13 @@ namespace JetSystems
         public Text rewardVideoAmountText;
 
         // Start is called before the first frame update
+        void Awake()
+        {
+            
+        }
         void Start()
         {
+            LoadSavedData();
             // Configure some Texts
             rewardVideoAmountText.text = "+" + rewardAmount;
             unlockRandomPriceText.text = itemPrice.ToString();
@@ -173,7 +180,10 @@ namespace JetSystems
                 else
                     shopButtons[i].SetSelected(false);
             }
-
+            Debug.Log(itemIndex);
+            currentSpriteIndex = itemIndex;
+            currentSprite.sprite = itemsSprites[currentSpriteIndex];
+            SaveData();
             ShowItem(itemIndex);
         }
 
@@ -292,6 +302,7 @@ namespace JetSystems
 
         void Switch(int index)
         {
+            Debug.LogError(index);
             for (int i = 0; i < shopButtons.Length; i++)
             {
                 if (i == index)
@@ -347,6 +358,19 @@ namespace JetSystems
         {
             PlayerPrefsManager.SetItemUnlockedState(itemIndex, 1);
             //PlayerPrefs.SetInt("ITEMUNLOCKED" + itemIndex, 1);
+        }
+        public int CurrSpriteIndex()
+        {
+            return currentSpriteIndex;
+        }
+        public void SaveData()
+        {
+            PlayerPrefs.SetInt("LastSkin", currentSpriteIndex);
+        }
+
+        public void LoadSavedData()
+        {
+            currentSpriteIndex = PlayerPrefs.GetInt("LastSkin");
         }
     }
 }

@@ -46,7 +46,7 @@ public class Runner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         ManageRunnerState();
     }
@@ -122,7 +122,6 @@ public class Runner : MonoBehaviour
         explodeParticles.Play();
 
         OnRunnerDied?.Invoke(this);
-
         Destroy(gameObject, 2f);
     }
 

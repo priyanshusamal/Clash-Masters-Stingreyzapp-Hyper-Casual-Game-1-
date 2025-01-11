@@ -37,7 +37,7 @@ public class SquadFormation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         FermatSpiralPlacement();
         squadAmountText.text = transform.childCount.ToString();
