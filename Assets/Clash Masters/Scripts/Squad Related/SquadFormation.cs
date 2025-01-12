@@ -46,7 +46,6 @@ public class SquadFormation : MonoBehaviour
             if(transform.childCount > 0)
             {
                 runnerPrefab = transform.GetChild(0).transform.GetComponent<Runner>();
-                Debug.Log("hel");
             }
         }
     }

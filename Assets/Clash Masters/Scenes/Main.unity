@@ -12178,6 +12178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   enemiesDetectionRadius: 4.37
+  finishLineDetected: 0
 --- !u!114 &651037380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14075,7 +14076,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066420487}
-  m_LocalRotation: {x: -0, y: 0.0000000025584226, z: -0.0000000019081552, w: 1}
+  m_LocalRotation: {x: -0, y: 1.7763566e-15, z: -8.881783e-16, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17194,7 +17195,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.31496006, y: -0.000000018678893, z: 0.000000006198582, w: 0.94910496}
+  m_LocalRotation: {x: 0.31496006, y: -0.000000016330665, z: 0.0000000054193245, w: 0.94910496}
   m_LocalPosition: {x: 0, y: 14.9, z: -14.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18056,7 +18057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUG: 0
-  levelToPlay: 1
+  levelToPlay: 9
   initialChunk: {fileID: 2203362719632443158, guid: 6dd26c848b3c1420d9df69f6bc99a085,
     type: 3}
   finishChunk: {fileID: 7260794710436154549, guid: c5f141fa8334d4480882b626c8ebae5e,
@@ -25887,7 +25888,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1258475018}
     m_Modifications:
-    - target: {fileID: 5573219847136550046, guid: b1e9adc0e7ce781429cc72618446dd37,
+    - target: {fileID: 4321264721651923464, guid: b1e9adc0e7ce781429cc72618446dd37,
         type: 3}
       propertyPath: m_IsActive
       value: 0

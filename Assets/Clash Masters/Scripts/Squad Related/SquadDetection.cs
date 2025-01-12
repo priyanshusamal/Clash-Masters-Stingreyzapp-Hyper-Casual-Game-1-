@@ -23,7 +23,7 @@ public class SquadDetection : MonoBehaviour
     [SerializeField] private LayerMask enemiesLayer;
     [SerializeField] private float enemiesDetectionRadius;
     private bool previousEnemiesDetected;
-    private bool finishLineDetected;
+    public bool finishLineDetected;
    
 
     // Start is called before the first frame update
@@ -70,6 +70,7 @@ public class SquadDetection : MonoBehaviour
     {
         if (Physics.OverlapSphere(transform.position, 1, finishLayer).Length > 0)
         {
+            
             FindObjectOfType<FinishLine>().PlayConfettiParticles();
             SetLevelComplete();
 
