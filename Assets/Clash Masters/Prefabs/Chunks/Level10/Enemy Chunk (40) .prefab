@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 7990820477145832734, guid: e4ef39e3697e499438c8d3addbdb2cac,
     type: 3}
-  amount: 40
+  amount: 10
   parent: {fileID: 603837014272494935}
 --- !u!1 &603837014272494934
 GameObject:

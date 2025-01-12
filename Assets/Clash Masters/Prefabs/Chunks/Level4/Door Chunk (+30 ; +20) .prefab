@@ -1347,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 3334616457437108642, guid: 69731dbc09559a5409152de645514e8d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.83
+      value: 3.08
       objectReference: {fileID: 0}
     - target: {fileID: 3334616457437108642, guid: 69731dbc09559a5409152de645514e8d,
         type: 3}
@@ -1458,6 +1458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Knife Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686477033243037135, guid: ac12587c650444a40bb697b320d17551,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac12587c650444a40bb697b320d17551, type: 3}

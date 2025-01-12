@@ -1056,6 +1056,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Layer of Knife Left '
       objectReference: {fileID: 0}
+    - target: {fileID: 2003604594961871817, guid: 55ed5138ef49864439efcff8b563ede2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2384739705786628922, guid: 55ed5138ef49864439efcff8b563ede2,
         type: 3}
       propertyPath: m_RootOrder

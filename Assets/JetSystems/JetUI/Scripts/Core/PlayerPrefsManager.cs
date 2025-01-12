@@ -17,6 +17,7 @@ namespace JetSystems
         public static int GetCoins()
         { 
             // return 1000;
+            SaveCoins(100);
             return PlayerPrefs.GetInt(COINSKEY); 
         }
 
@@ -28,15 +29,10 @@ namespace JetSystems
 
 
         public static int GetItemUnlockedState(int itemIndex)
-        {  
-            // Debug.Log("Get:  "+ ITEMUNLOCKEDKEY+itemIndex);
-            return PlayerPrefs.GetInt(ITEMUNLOCKEDKEY + itemIndex); 
-        }
+        { return PlayerPrefs.GetInt(ITEMUNLOCKEDKEY + itemIndex);}
 
         public static void SetItemUnlockedState(int itemIndex, int state)
-        { 
-            PlayerPrefs.SetInt(ITEMUNLOCKEDKEY + itemIndex, state);
-        }
+        { PlayerPrefs.SetInt(ITEMUNLOCKEDKEY + itemIndex, state);}
 
 
 
