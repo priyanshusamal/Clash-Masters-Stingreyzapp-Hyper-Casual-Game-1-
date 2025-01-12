@@ -28,10 +28,15 @@ namespace JetSystems
 
 
         public static int GetItemUnlockedState(int itemIndex)
-        { return PlayerPrefs.GetInt(ITEMUNLOCKEDKEY + itemIndex); }
+        {  
+            // Debug.Log("Get:  "+ ITEMUNLOCKEDKEY+itemIndex);
+            return PlayerPrefs.GetInt(ITEMUNLOCKEDKEY + itemIndex); 
+        }
 
         public static void SetItemUnlockedState(int itemIndex, int state)
-        { PlayerPrefs.SetInt(ITEMUNLOCKEDKEY + itemIndex, state); }
+        { 
+            PlayerPrefs.SetInt(ITEMUNLOCKEDKEY + itemIndex, state);
+        }
 
 
 

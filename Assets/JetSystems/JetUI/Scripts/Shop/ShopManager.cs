@@ -57,13 +57,13 @@ namespace JetSystems
         }
         void Start()
         {
+            LoadData();
             LoadSavedData();
             // Configure some Texts
             rewardVideoAmountText.text = "+" + rewardAmount;
             unlockRandomPriceText.text = itemPrice.ToString();
 
             // Load data
-            LoadData();
 
             // Add the listeners to the buttons
             AddListeners();

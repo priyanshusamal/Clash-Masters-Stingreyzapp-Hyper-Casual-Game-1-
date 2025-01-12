@@ -45,7 +45,7 @@ public class CircularSaw : MonoBehaviour
 
     private void Rotate()
     {
-        renderer.RotateAround(Vector3.forward, Time.deltaTime * rotationSpeed);
+        renderer.RotateAround(Vector3.up, Time.deltaTime * rotationSpeed);
     }
 
     private void OnDrawGizmosSelected()

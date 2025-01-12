@@ -35,7 +35,7 @@ public class RunnerSkinManager : MonoBehaviour
     {
         if(Minimize==true)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale,new Vector3(0.5f,0.5f,0.5f),0.025f);
+            transform.localScale = Vector3.Lerp(transform.localScale,new Vector3(0.6f,0.6f,0.6f),0.025f);
         }
     }
 
